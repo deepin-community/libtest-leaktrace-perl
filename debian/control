@@ -1,0 +1,26 @@
+Source: libtest-leaktrace-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Ansgar Burchardt <ansgar@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               perl-xs-dev,
+               perl:native
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libtest-leaktrace-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libtest-leaktrace-perl.git
+Homepage: https://metacpan.org/release/Test-LeakTrace
+Rules-Requires-Root: no
+
+Package: libtest-leaktrace-perl
+Architecture: any
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends}
+Description: Perl test module for tracing memory leaks
+ Test::LeakTrace provides several functions that detect and trace memory leaks.
+ This module scans arenas, the memory allocation system, so it can detect any
+ leaked scalar values (SVs) in given blocks. Leaked SVs are those which are not
+ released after the end of the scope they have been created, including internal
+ caches and global variables.
